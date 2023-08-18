@@ -6,7 +6,6 @@ const isDesktop = window.matchMedia('(min-width: 900px)');
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById('nav');
-    nav.classList.add('workflow');
     const navSections = nav.querySelector('.nav-sections');
     const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
     if (navSectionExpanded && isDesktop.matches) {
@@ -107,7 +106,7 @@ export default async function decorate(block) {
     const classes = ['brand', 'sections', 'tools'];
     classes.forEach((c, i) => {
       const section = nav.children[i];
-      if (section) section.classList.add(`nav-${c}`);
+      if (section) section.classList.add(`nav-${c} workflow`);
     });
 
     const navSections = nav.querySelector('.nav-sections');
