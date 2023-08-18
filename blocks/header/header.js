@@ -102,11 +102,12 @@ export default async function decorate(block) {
     const nav = document.createElement('nav');
     nav.id = 'nav';
     nav.innerHTML = html;
+    nav.classList.add('workflow');
 
     const classes = ['brand', 'sections', 'tools'];
     classes.forEach((c, i) => {
       const section = nav.children[i];
-      if (section) section.classList.add(`nav-${c} workflow`);
+      if (section) section.classList.add(`nav-${c}`);
     });
 
     const navSections = nav.querySelector('.nav-sections');
